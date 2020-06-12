@@ -25,7 +25,7 @@ public class TapToPlaceObject : MonoBehaviour
 
    private void PlaceObject()
    {
-       Vector2 screenPosition = Camera.main.ViewportToScreenPoint(Input.GetTouch(1).position);
+       Vector2 screenPosition = Camera.main.ViewportToScreenPoint(Input.GetTouch(0).position);
        var hits = new List<ARRaycastHit>();
        _raycastManager.Raycast(screenPosition, hits,TrackableType.Planes);
        _placementPoseIsValid = hits.Count > 0;
