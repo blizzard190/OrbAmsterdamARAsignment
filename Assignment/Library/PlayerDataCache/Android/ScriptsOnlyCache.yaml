@@ -1,5 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp.dll:
+    - WorkingTapToPlace
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -8,6 +10,7 @@ ScriptsOnlyBuild:
     Unity.XR.ARFoundation.dll:
     - UnityEngine.XR.ARFoundation.ARCameraBackground
     - UnityEngine.XR.ARFoundation.ARCameraManager
+    - UnityEngine.XR.ARFoundation.ARInputManager
     - UnityEngine.XR.ARFoundation.ARPlane
     - UnityEngine.XR.ARFoundation.ARPlaneManager
     - UnityEngine.XR.ARFoundation.ARPlaneMeshVisualizer
@@ -15,6 +18,7 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.ARFoundation.ARPointCloudManager
     - UnityEngine.XR.ARFoundation.ARPointCloudParticleVisualizer
     - UnityEngine.XR.ARFoundation.ARRaycastManager
+    - UnityEngine.XR.ARFoundation.ARSession
     - UnityEngine.XR.ARFoundation.ARSessionOrigin
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -44,7 +48,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
-    - Class: 81
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -53,27 +57,33 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11440}
     - Class: 114
-      Script: {instanceID: 11576}
+      Script: {instanceID: 11592}
     - Class: 114
-      Script: {instanceID: 11768}
+      Script: {instanceID: 11792}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 12058}
+      Script: {instanceID: 12026}
     - Class: 114
-      Script: {instanceID: 12232}
+      Script: {instanceID: 12100}
     - Class: 114
-      Script: {instanceID: 12530}
+      Script: {instanceID: 12280}
     - Class: 114
-      Script: {instanceID: 12784}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12856}
+      Script: {instanceID: 12650}
     - Class: 114
-      Script: {instanceID: 12928}
+      Script: {instanceID: 12846}
     - Class: 114
-      Script: {instanceID: 13236}
+      Script: {instanceID: 12918}
+    - Class: 114
+      Script: {instanceID: 12992}
+    - Class: 114
+      Script: {instanceID: 13166}
+    - Class: 114
+      Script: {instanceID: 13300}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -95,6 +105,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 3c08375166df118bd1801438fc36b92f
@@ -173,6 +189,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 9b6303c7164a38e06044ec2036c18b6b
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARParticipantManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -256,7 +278,7 @@ ScriptsOnlyBuild:
       Hash: 290afc8da8e459e0b8dc7444bfaf5e35
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
-    className: ARReferencePoint
+    className: ARAnchor
   - hash:
       serializedVersion: 2
       Hash: 52bcb9c2a78bdd8d98a59e915c346e75
@@ -331,16 +353,40 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 8f1e591808db709cb76cb7d85cb9a8d7
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARCore.dll
+    namespaceName: UnityEngine.XR.ARCore
+    className: ARCoreLoader
+  - hash:
+      serializedVersion: 2
+      Hash: 597ed3af59d821730226fb39de261a4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WorkingTapToPlace
+  - hash:
+      serializedVersion: 2
+      Hash: 1268406d3f2e4b2c2b670b560b6db769
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: AREnvironmentProbeManager
+  - hash:
+      serializedVersion: 2
+      Hash: 290afc8da8e459e0b8dc7444bfaf5e35
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARParticipant
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARPlaneMeshVisualizer
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARFoundation.dll
+    namespaceName: UnityEngine.XR.ARFoundation
+    className: ARBackgroundRendererFeature
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -353,6 +399,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Unity.XR.ARCore.dll
+    namespaceName: UnityEngine.XR.ARCore
+    className: ARCoreLoaderSettings
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -409,7 +461,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 982acebdb29318e47aa2d3c2cb7e1539
+      Hash: 0535c7e7c34dd1cdfc5b1f8ffce1aebe
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARTrackedImageManager
@@ -475,10 +527,10 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: fcc7ae5ff1b0c9cad5865d5b6cee016a
+      Hash: 1d9b53318825332126b0fd6da2d962fb
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
-    className: ARReferencePointManager
+    className: ARAnchorManager
   - hash:
       serializedVersion: 2
       Hash: 290afc8da8e459e0b8dc7444bfaf5e35
@@ -493,7 +545,7 @@ ScriptsOnlyBuild:
     className: ARCameraManager
   - hash:
       serializedVersion: 2
-      Hash: d0976f085ee327327a35839ca3cb80f1
+      Hash: d39905ff8fda75afed4d688761c322e1
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARFaceManager
@@ -583,7 +635,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 20d20168517d1c0e098918311aa95bbb
+      Hash: cbe6deff75fc0987595a61e9510f7917
     assemblyName: Unity.XR.ARFoundation.dll
     namespaceName: UnityEngine.XR.ARFoundation
     className: ARCameraBackground
@@ -698,4 +750,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainScene.unity
-  playerPath: C:/Users/Gebruiker/Documents/Unity/OrbAmsterdamARAsignment/Assignment/Builds/Test2.apk
+  playerPath: C:/Users/Gebruiker/Documents/Unity/OrbAmsterdamARAsignment/Assignment/Builds/Test10.apk

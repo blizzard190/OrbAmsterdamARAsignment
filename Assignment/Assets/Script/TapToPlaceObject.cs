@@ -10,6 +10,7 @@ public class TapToPlaceObject : MonoBehaviour
    private ARRaycastManager _raycastManager;
    private Pose _placementPose;
    private bool _placementPoseIsValid = false;
+   private Touch _touch;
    void Start() 
    {
        _raycastManager = FindObjectOfType<ARRaycastManager>();
@@ -19,15 +20,16 @@ public class TapToPlaceObject : MonoBehaviour
    {
        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began || Input.GetKeyDown(KeyCode.A))
        {
+           _touch = Input.GetTouch(0);
            PlaceObject();
        }
    }
 
    private void PlaceObject()
    {
-       Vector2 screenPosition = Camera.main.ViewportToScreenPoint(Input.GetTouch(0).position);
+       var screenPosition = Camera.main.ScreenToWorldPoint(_touch.position);
        var hits = new List<ARRaycastHit>();
-       _raycastManager.Raycast(screenPosition, hits,TrackableType.Planes);
+       _raycastManager.Raycast(_touch.position, hits,TrackableType.Planes);
        _placementPoseIsValid = hits.Count > 0;
        if (_placementPoseIsValid)
        {
